@@ -1,0 +1,31 @@
+
+<div class="container" style="background: lightblue; align-items: baseline">
+  <h2 style="background: red">User Details ..</h2>
+  <table class="table table-striped">
+    <thead>
+    <td style="font-size: large ">FirstName </td>
+    <td style="font-size: large ">LastName</td>
+    <td style="font-size: large ">Email</td>
+    <td style="font-size: large ">Operation</td>
+
+    </thead>
+
+  <tbody>
+
+  <tr *ngFor="let user1 of user; let ind = index">
+
+  <td>{{user1.uname}} </td>
+  <td>{{user1.lname}}</td>
+  <td>{{user1.email}}</td>
+<td><button class="btn btn-danger"(click) = "remove(user1.userId)">delete</button>
+  <button class="btn btn-primary" [routerLink] = "['/updateUser',user1.userId]">edit</button></td>
+  </tr>
+
+  </tbody>
+
+  </table>
+    <button class="btn btn-primary" (click)="addUser(user1)">New</button>
+  </div>
+
+
+

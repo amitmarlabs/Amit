@@ -1,0 +1,29 @@
+
+<h3 style="font-size: large" *ngIf="isAddedUser">{{confirmMessage}}</h3>
+
+
+<div class="col-md-6 col-md-offset-3" style="background: lightblue">
+  <h2 style="margin-right: 33px">Register</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="addPost(formGroup)" novalidate>
+    <div>
+      <label form="firstName">First Name</label>
+      <input type="text" class="form-control"  formControlName="uname" ngModel required/>
+    <span *ngIf="uname.errors?.required && uname.touched" class="alert alert-danger">Uname is required</span>
+    </div>
+    <div>
+      <label form="lastName">Last Name</label>
+      <input type="text" class="form-control" name="lname"   formControlName="lname" ngModel required/>
+      <span *ngIf="lname.errors?.required && lname.touched" class="alert alert-danger">lname is required</span>
+    </div>
+    <div>
+      <label form="username">Email</label>
+      <input type="text" class="form-control" name="email"  formControlName="email" ngModel required/>
+      <span *ngIf="email.errors?.required && email.touched" class="alert alert-danger">email is required</span>
+    </div>
+
+    <div>
+      <button [disabled]="loading" class="btn btn-primary" >Register</button>
+
+    </div>
+  </form>
+</div>
